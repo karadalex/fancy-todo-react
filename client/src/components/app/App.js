@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from '../header/Header';
 import TodoList from '../todoList/TodoList';
+import AddTodo from '../add-todo/AddTodo';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <TodoList />
+        <AddTodo />
       </div>
     );
   }
