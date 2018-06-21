@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import './TodoList.css';
+import Todo from '../todo/Todo';
+import Grid from '@material-ui/core/Grid';
 
 class TodoList extends Component {
     constructor(props) {
@@ -19,11 +22,21 @@ class TodoList extends Component {
 
     render() {
         return (
-            <ul>
+            <div className="TodoList">
+              <Grid container justify="space-between" spacing={24}>
                 {this.state.todos.map(todo => {
-                    return <li key={todo.id}>{todo.task}</li>
+                  return (
+                    <Grid item xs={12} sm={6} md={4}>
+                      <Todo 
+                          key={todo.id} 
+                          name={todo.task} 
+                          task={todo.task}>
+                      </Todo>
+                    </Grid>
+                  )
                 })}
-            </ul>
+              </Grid>
+            </div>
         );
     }
 }
