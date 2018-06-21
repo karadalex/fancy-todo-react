@@ -23,10 +23,10 @@ class TodoList extends Component {
     render() {
         return (
             <div className="TodoList">
-              <Grid container justify="space-between" spacing={24}>
+              <Grid container spacing={24}>
                 {this.state.todos.map(todo => {
                   return (
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} lg={2}>
                       <Todo 
                           key={todo.id} 
                           title={todo.title} 
