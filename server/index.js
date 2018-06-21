@@ -9,9 +9,9 @@ app.get('/', function(req, res){
 
 app.get('/api/v1/todos', (req, res) => {
   const todos = [
-    {id:1, task:"Go to supermarket", completed:false},
-    {id:2, task:"Do the laundry", completed:true},
-    {id:3, task:"Study for exams", completed:false}
+    {id:1, title: "Supermarket", task:"Go to supermarket", completed:false},
+    {id:2, title: "Laundry", task:"Do the laundry", completed:true},
+    {id:3, title: "Exams", task:"Study for exams", completed:false}
   ];
   res.json(todos);
 })

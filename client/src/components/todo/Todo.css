@@ -1,5 +1,9 @@
 .Todo {
     padding: 20px;
-    height: 200px;
+    /* height: 150px; */
     text-align: left;
+}
+
+.TodoTitle {
+    padding-bottom: 20px;
 }

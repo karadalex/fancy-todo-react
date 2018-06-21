@@ -7,8 +7,8 @@ class Todo extends Component {
   render() {
     return (
       <Paper className="Todo" elevation={4}>
-        <Typography variant="headline" component="h3">
-          {this.props.name}
+        <Typography variant="headline" component="h3" className="TodoTitle">
+          {this.props.title}
         </Typography>
         <Typography component="p">
           {this.props.task}

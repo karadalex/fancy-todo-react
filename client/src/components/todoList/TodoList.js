@@ -29,7 +29,7 @@ class TodoList extends Component {
                     <Grid item xs={12} sm={6} md={4}>
                       <Todo 
                           key={todo.id} 
-                          name={todo.task} 
+                          title={todo.title} 
                           task={todo.task}>
                       </Todo>
                     </Grid>
