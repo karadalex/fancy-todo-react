@@ -21,7 +21,8 @@ function AddTodo(props) {
         variant="fab" 
         color="primary" 
         aria-label="add" 
-        className={classes.button} >
+        className={classes.button}
+        onClick={() => props.onClick()} >
         <AddIcon />
       </Button>
     </div>
