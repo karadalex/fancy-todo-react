@@ -14,20 +14,20 @@ class App extends Component {
 
   componentDidMount() {
     fetch('/api/v1/todos')
-        .then(res => res.json())
-        .then(todos => this.setState(
-            {todos}, //ES6 equivalent style for .setState({todos: todos})
-            () => console.log('TODOs fetched: ', todos))
-        );
+      .then(res => res.json())
+      .then(todos => this.setState(
+        {todos}, //ES6 equivalent style for .setState({todos: todos})
+        () => console.log('TODOs fetched: ', todos))
+      );
   }
 
   addTodo() {
     this.setState(prevState => ({
       todos: [...prevState.todos, {
-        id:prevState.todos.length, 
+        id: prevState.todos.length+1, 
         title: "Todo",
         task:"New todo", 
-        completed:false
+        completed: false
       }]
     }))
   }
