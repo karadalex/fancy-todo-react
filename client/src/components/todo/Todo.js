@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Input from '@material-ui/core/Input';
+import { changeTodoTitle } from '../../actions';
+import { connect } from 'react-redux';
 
 const styles = theme => ({
   title: {
@@ -13,6 +15,10 @@ const styles = theme => ({
 });
 
 class Todo extends Component {
+  onChangeTitle = event => {
+    this.props.dispatch(changeTodoTitle(this.props.id, event.target.value));
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -23,7 +29,8 @@ class Todo extends Component {
           disableUnderline={true}
           fullWidth={true}
           className={classes.title}
-          defaultValue={this.props.title}
+          value={this.props.title}
+          onChange={this.onChangeTitle}
         />
         <Input
           rowsMax="5"
@@ -40,4 +47,4 @@ Todo.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Todo);
+export default connect()(withStyles(styles)(Todo));

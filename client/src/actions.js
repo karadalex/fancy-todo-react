@@ -1,5 +1,6 @@
 export const FETCH_TODOS = 'FETCH_TODOS';
 export const ADD_TODO = 'ADD_TODO';
+export const CHANGE_TODO_TITLE = 'CHANGE_TODO_TITLE';
 
 export function loadFetchedTodos(todos) {
   return {
@@ -18,5 +19,14 @@ export function addTodo(id) {
   return {
     type: ADD_TODO,
     todo
+  }
+}
+
+export function changeTodoTitle(id, newTitle) {
+  console.log(newTitle);
+  return {
+    type: CHANGE_TODO_TITLE,
+    id,
+    newTitle
   }
 }
