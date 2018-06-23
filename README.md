@@ -18,6 +18,6 @@ Fancy TODO React app
 
 1. ReactJS
 2. ExpressJS
-4. Redux (TODO)
+4. Redux
 3. SocketIO (TODO)
 4. MongoDB (TODO)
