@@ -17,7 +17,8 @@ const styles = theme => ({
 
 class AddTodo extends Component {
   addTodo() {
-    this.props.dispatch(addTodo(1));
+    var id = this.props.todos.length+1;
+    this.props.dispatch(addTodo(id));
   }
 
   render() {

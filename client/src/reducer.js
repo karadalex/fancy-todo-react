@@ -6,9 +6,8 @@ export function reducer(state = initialState, action) {
   switch(action.type) {
     case 'FETCH_TODOS':
       return {
-        ...state,
         todos: action.todos
-      };
+      }
     case 'ADD_TODO':
       return {
         ...state,

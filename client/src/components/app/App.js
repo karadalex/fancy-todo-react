@@ -3,14 +3,9 @@ import './App.css';
 import Header from '../header/Header';
 import TodoList from '../todoList/TodoList';
 import AddTodo from '../add-todo/AddTodo';
-import { fetchTodos } from '../../actions';
 import { connect } from 'react-redux';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.dispatch(fetchTodos());
-  }
-
   render() {
     return (
       <div className="App">
