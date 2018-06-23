@@ -4,15 +4,19 @@ import Todo from '../todo/Todo';
 import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import { loadFetchedTodos } from '../../actions';
+import axios from 'axios';
 
 class TodoList extends Component {
   componentDidMount() {
-    fetch('/api/v1/todos')
-      .then(res => res.json())
-      .then(data => {
-        this.props.dispatch(loadFetchedTodos(data));
+    axios.get('/api/v1/todos')
+      .then(res => {
+        this.props.dispatch(loadFetchedTodos(res.data)); 
+        // ^ Use only arrow functions, to be able to use this keyword
       })
-      .then();
+      .catch(error => {
+        console.log(error);
+      });
+
   }
 
   render() {
