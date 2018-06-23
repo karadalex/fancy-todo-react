@@ -19,18 +19,16 @@ class Todo extends Component {
     return (
       <Paper className="Todo" elevation={4}>
         <Input
-          margin="normal"
           multiline
-          disableUnderline="true"
-          fullWidth="true"
+          disableUnderline={true}
+          fullWidth={true}
           className={classes.title}
           defaultValue={this.props.title}
         />
         <Input
           rowsMax="5"
           multiline
-          margin="normal"
-          disableUnderline="true"
+          disableUnderline={true}
           defaultValue={this.props.task}
         />
       </Paper>

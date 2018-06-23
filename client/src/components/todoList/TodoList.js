@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './TodoList.css';
 import Todo from '../todo/Todo';
 import Grid from '@material-ui/core/Grid';
+import { connect } from 'react-redux';
 
 class TodoList extends Component {
     render() {
@@ -10,9 +11,8 @@ class TodoList extends Component {
               <Grid container spacing={24}>
                 {this.props.todos.map(todo => {
                   return (
-                    <Grid item xs={12} sm={6} md={4} lg={2}>
+                    <Grid key={todo.id} item xs={12} sm={6} md={4} lg={2}>
                       <Todo 
-                          key={todo.id} 
                           id={todo.id} 
                           title={todo.title} 
                           task={todo.task}>
@@ -26,4 +26,10 @@ class TodoList extends Component {
     }
 }
 
-export default TodoList;
+function mapStateToProps(state) {
+  return {
+    todos: state.todos
+  };
+}
+
+export default connect(mapStateToProps)(TodoList);
